@@ -23,6 +23,6 @@ int main()
       cout<<stock<<"\n";
     }
   }while( choice != 'q' && choice != 'Q');
-
+  //Exit program
   return 0;
 }
