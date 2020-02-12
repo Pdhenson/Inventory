@@ -4,7 +4,8 @@
 
 using std::string;
 using std::ostream;
-  
+
+//This is an inventory data structure. It holds the current values.  
 Inventory::Inventory(string name, float price, int count)
 {
   m_name = name;
@@ -14,9 +15,16 @@ Inventory::Inventory(string name, float price, int count)
 
 void Inventory::sell()
 {
-  m_in_stock--;
+  //IF there's available stock, reduce it by 1.
+  if (m_in_stock >=0){
+  	m_in_stock--;
+  }
+  else{
+	cout << "There is no stock available" << endl;
+  }
 }
 
+//This section drives the code.
 ostream& operator<<(ostream& stream, const Inventory& item)
 {
   stream << item.m_name 
